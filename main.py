@@ -177,7 +177,7 @@ def contact():
 
 
 @app.route("/new-post", methods=["GET", "POST"])
-@admin_only
+@login_required
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
